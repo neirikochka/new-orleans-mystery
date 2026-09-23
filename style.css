@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(83, 48, 35, 0.45), transparent 45%),
+    linear-gradient(180deg, #120f12 0%, #1b1416 55%, #0d0b0d 100%);
+  color: #e8dccd;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.city {
+  position: relative;
+  width: min(100% - 40px, 900px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 90px 30px 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.city::before,
+.city::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.35;
+}
+
+.city::before {
+  width: 280px;
+  height: 280px;
+  background: #795548;
+  top: 10%;
+  left: -120px;
+}
+
+.city::after {
+  width: 220px;
+  height: 220px;
+  background: #5d4037;
+  bottom: 5%;
+  right: -100px;
+}
+
+h1 {
+  position: relative;
+  margin: 0;
+  color: #d3ae70;
+  font-size: clamp(42px, 8vw, 72px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  text-shadow: 0 0 25px rgba(211, 174, 112, 0.2);
+}
+
+.year {
+  position: relative;
+  margin-top: 8px;
+  color: #9f8b7d;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.intro {
+  position: relative;
+  max-width: 650px;
+  margin: 45px auto;
+  font-size: 19px;
+  line-height: 1.9;
+  color: #d4c4b7;
+}
+
+.districts {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+button {
+  position: relative;
+  min-height: 65px;
+  padding: 15px 20px;
+  border: 1px solid #594449;
+  background: rgba(36, 28, 30, 0.85);
+  color: #e8dccd;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  border-color: #b58b62;
+  background: rgba(57, 39, 42, 0.95);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+#message {
+  position: relative;
+  min-height: 60px;
+  margin: 30px auto 0;
+  max-width: 650px;
+  color: #c9a66b;
+  font-size: 17px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .city {
+    width: min(100% - 25px, 900px);
+    padding: 60px 10px;
+  }
+
+  .districts {
+    grid-template-columns: 1fr;
+  }
+
+  .intro {
+    font-size: 17px;
+  }
+}
