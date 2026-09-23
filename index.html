@@ -54,48 +54,36 @@
 
     </div>
 
-    <div id="message"></div>
-    <div id="location"></div>
-    <button id="backButton" onclick="backToCity()">
-  Вернуться в город
-</button>
-
   </main>
 
+    <section id="scene" class="scene">
+
+    <h2 id="scene-title"></h2>
+
+    <p>
+      Ночь здесь ощущается иначе.
+      Кажется, город что-то скрывает.
+    </p>
+
+    <button onclick="backToCity()">
+      Вернуться в город
+    </button>
+
+  </section>
 
   <script>
-    function visit(place) {
+  function visit(place) {
+    document.querySelector(".city").style.display = "none";
 
-      document.getElementById("location").textContent = place;
+    document.getElementById("scene").style.display = "flex";
+    document.getElementById("scene-title").textContent = place;
+  }
 
-      const messages = {
-
-        "Французский квартал":
-          "Музыка доносится из открытых окон, а среди старых домов кто-то наблюдает за тобой.",
-
-        "Порт":
-          "С Миссисипи тянет сыростью. Между кораблями мелькает чей-то силуэт.",
-
-        "Треме":
-          "Здесь вечер никогда не бывает совсем тихим. Но сегодня в переулках слишком мало людей.",
-
-        "Старое поместье":
-          "За высокими воротами горит всего одно окно. Кажется, тебя там уже ждали.",
-
-        "Болота":
-          "Туман становится гуще с каждым шагом. Где-то в камышах раздаётся плеск.",
-
-        "Место, которого нет на карте":
-          "Ты уверен, что этого переулка здесь раньше не было."
-      };
-
-      document.getElementById("message").textContent = messages[place];
-    }
-function backToCity() {
-  document.getElementById("location").textContent = "";
-  document.getElementById("message").textContent = "";
-}
-  </script>
+  function backToCity() {
+    document.getElementById("scene").style.display = "none";
+    document.querySelector(".city").style.display = "flex";
+  }
+</script>
 
 </body>
 </html>
