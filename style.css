@@ -137,3 +137,11 @@ button:hover {
     font-size: 17px;
   }
 }
+
+#location {
+  position: relative;
+  margin-top: 20px;
+  color: #d3ae70;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
