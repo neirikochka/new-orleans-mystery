@@ -3,82 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Новый Орлеан — 1840</title>
 
-  <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: #171315;
-      color: #e8dccd;
-      font-family: Georgia, serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .city {
-      width: 90%;
-      max-width: 700px;
-      padding: 40px 25px;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 8px;
-      color: #c9a66b;
-    }
-
-    .year {
-      color: #9d8b7d;
-      font-size: 18px;
-      margin-bottom: 35px;
-    }
-
-    .intro {
-      font-size: 19px;
-      line-height: 1.7;
-      margin-bottom: 35px;
-    }
-
-    .districts {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    button {
-      background: #241c1e;
-      color: #e8dccd;
-      border: 1px solid #594449;
-      padding: 16px;
-      font-size: 17px;
-      font-family: Georgia, serif;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #302326;
-      border-color: #a77b54;
-    }
-
-    #message {
-      margin-top: 30px;
-      min-height: 50px;
-      color: #c9a66b;
-      font-style: italic;
-      line-height: 1.6;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <main class="city">
+
     <h1>Новый Орлеан</h1>
 
-    <div class="year">1840 год</div>
+    <div class="year">1840</div>
 
     <p class="intro">
       Ночь опустилась на город слишком быстро.
@@ -90,6 +27,7 @@
     </p>
 
     <div class="districts">
+
       <button onclick="visit('Французский квартал')">
         Французский квартал
       </button>
@@ -110,20 +48,46 @@
         Болота
       </button>
 
-      <button onclick="visit('Неизвестное место')">
+      <button onclick="visit('Место, которого нет на карте')">
         Место, которого нет на карте
       </button>
+
     </div>
 
     <div id="message"></div>
+
   </main>
+
 
   <script>
     function visit(place) {
-      document.getElementById("message").textContent =
-        "Ты направляешься в: " + place + ". Что-то подсказывает, что сегодня город приготовил тебе сюрприз...";
+
+      const messages = {
+
+        "Французский квартал":
+          "Музыка доносится из открытых окон, а среди старых домов кто-то наблюдает за тобой.",
+
+        "Порт":
+          "С Миссисипи тянет сыростью. Между кораблями мелькает чей-то силуэт.",
+
+        "Треме":
+          "Здесь вечер никогда не бывает совсем тихим. Но сегодня в переулках слишком мало людей.",
+
+        "Старое поместье":
+          "За высокими воротами горит всего одно окно. Кажется, тебя там уже ждали.",
+
+        "Болота":
+          "Туман становится гуще с каждым шагом. Где-то в камышах раздаётся плеск.",
+
+        "Место, которого нет на карте":
+          "Ты уверен, что этого переулка здесь раньше не было."
+      };
+
+      document.getElementById("message").textContent = messages[place];
     }
   </script>
 
+</body>
+</html>
 </body>
 </html>
