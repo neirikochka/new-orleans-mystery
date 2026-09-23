@@ -145,3 +145,29 @@ button:hover {
   font-size: 28px;
   letter-spacing: 1px;
 }
+
+
+.scene {
+  min-height: 100vh;
+  padding: 90px 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.scene h2 {
+  margin: 0 0 30px;
+  color: #d3ae70;
+  font-size: 42px;
+  font-weight: normal;
+}
+
+.scene p {
+  max-width: 600px;
+  color: #d4c4b7;
+  font-size: 19px;
+  line-height: 1.9;
+  margin-bottom: 40px;
+}
